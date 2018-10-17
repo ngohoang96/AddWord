@@ -1,14 +1,34 @@
+import { WordItemComponent } from './components/list-words/word-item.component';
+import { WordFilterComponent } from './components/list-words/word-filter.component';
+import { PersonComponent } from './components/person.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
+import {WordComponent } from './components/word.component';
+import {MyInputComponent } from './components/my-input.components';
+import { ListWordsComponent } from './components/list-words/list-words.component';
+import { WordFormComponent } from './components/list-words/word-form.component';
+import { ChildComponent } from './components/interact/child.component';
+import { ParenComponent } from './components/interact/parent.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WordComponent,
+    MyInputComponent,
+    PersonComponent,
+    ListWordsComponent,
+    WordFilterComponent,
+    WordFormComponent,
+    WordItemComponent,
+    ChildComponent,
+    ParenComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
