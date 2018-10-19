@@ -43,7 +43,7 @@ export class PersonComponent{
     skills :Skill[] = [
         {name : "hoang" , grade : 9},
         {name : "ly" , grade : 8},
-        {name : "ly oc cho" , grade : 3}
+        {name : "ly 1" , grade : 3}
     ];
     increase(){
         return this.age++
