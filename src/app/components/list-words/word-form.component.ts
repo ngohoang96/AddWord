@@ -4,10 +4,10 @@ import { Word } from './word';
     selector: 'app-word-form',
     template: `
     <div style="margin-top: 20px">
-        <button class = "btn btn-success" *ngIf="!shouldShowForm" (click) = "toggleForm();">
+        <button class = "btn btn-success" >
                 add new word
         </button>
-        <div class="form-group word-form" *ngIf="shouldShowForm">
+        <div class="form-group word-form" >
         <input 
             placeholder="English"
             class ="form-control"
@@ -22,14 +22,12 @@ import { Word } from './word';
     <br/>
         <div  >
         <button class = "btn btn-success"
-        (click)="addWord();"
+       
         >
             Add Word
 
         </button>
-        <button class = "btn btn-danger"
-                (click) = "toggleForm();"
-        >
+        <button class = "btn btn-danger">
             Cancle
         </button>
         </div>
@@ -39,18 +37,20 @@ import { Word } from './word';
     `
 })
 export class WordFormComponent {
-    @Output() onAddWord = new EventEmitter<Word>();
+    
     txtEn ='';
     txtVn= '';
     shouldShowForm = false;
-    toggleForm() {
-        this.shouldShowForm = !this.shouldShowForm;
-    }
-    addWord(){
-        const word = new Word(this.txtEn,this.txtVn,false);
-        this.onAddWord.emit(word);
-        this.txtEn='';
-        this.txtVn='';
-        this.shouldShowForm=false;
-    }
+   
 }
+//@Output() onAddWord = new EventEmitter<Word>();
+// toggleForm() {
+//     this.shouldShowForm = !this.shouldShowForm;
+// }
+// addWord(){
+//     const word = new Word(this.txtEn,this.txtVn,false);
+//     this.onAddWord.emit(word);
+//     this.txtEn='';
+//     this.txtVn='';
+//     this.shouldShowForm=false;
+// }

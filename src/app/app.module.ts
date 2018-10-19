@@ -17,6 +17,7 @@ import { ChildComponent } from './components/interact/child.component';
 import { ParenComponent } from './components/interact/parent.component';
 import { countReducer } from './components/interact/countReducer';
 import {StoreModule } from '@ngrx/store'
+import { wordsReducer, shouldShowFormReducer, filterModeReducer } from './components/list-words/reducers';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,14 @@ import {StoreModule } from '@ngrx/store'
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({count: countReducer})
+    StoreModule.forRoot({count: countReducer,
+      words : wordsReducer,
+      shouldShowForm : shouldShowFormReducer,
+      filterModeReducer: filterModeReducer,
+    
+    
+    
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

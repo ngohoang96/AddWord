@@ -2,11 +2,7 @@ import { Component ,Input,Output,EventEmitter} from '@angular/core'
 @Component({
     selector: 'app-word-filter',
     template: `
-    <select style = "width: 200px" 
-            [(ngModel)]="filterMode"
-            
-    
-    >
+    <select style = "width: 200px" >
     <option value="SHOW_ALL">SHOW_ALL </option>
     <option value="SHOW_FORGOT">SHOW_FORGOT </option>
     <option value="SHOW_MEMORIZED">SHOW_MEMORIZED</option>
@@ -22,5 +18,5 @@ export class WordFilterComponent {
     //     this.onSetFilterMode.emit(event.target.value)
 
     // }
-    filterMode ='SHOW_ALL';
+    
 }

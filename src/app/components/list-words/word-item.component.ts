@@ -12,14 +12,12 @@ import { Word } from './word';
     <div class="btn-container">
     <button
         class="btn btn-success"
-        (click)= "onToggleWord.emit(wordInfo._id)"
+        
     >
         Memorized
     </button>
     <button
-        class="btn btn-warning"
-        (click)="onRemoveWord.emit(wordInfo._id);"
-        
+        class="btn btn-warning"        
     >
         Remove
     </button>
@@ -27,7 +25,7 @@ import { Word } from './word';
     `
 })
 export class WordItemComponent{
-    @Input() wordInfo:Word;
-    @Output() onRemoveWord  = new EventEmitter<string>();
-    @Output() onToggleWord = new EventEmitter<string>();
+    // @Input() wordInfo:Word;
+    // @Output() onRemoveWord  = new EventEmitter<string>();
+    // @Output() onToggleWord = new EventEmitter<string>();
 }
