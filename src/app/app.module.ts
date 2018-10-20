@@ -19,6 +19,9 @@ import { countReducer } from './components/interact/countReducer';
 import {StoreModule } from '@ngrx/store'
 import { wordsReducer, shouldShowFormReducer, filterModeReducer } from './components/list-words/reducers';
 
+
+//serveri 
+import {HttpModule} from '@angular/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +39,13 @@ import { wordsReducer, shouldShowFormReducer, filterModeReducer } from './compon
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({count: countReducer,
-      words : wordsReducer,
-      shouldShowForm : shouldShowFormReducer,
-      filterModeReducer: filterModeReducer,
-    
+    HttpModule,
+    StoreModule.forRoot({
+      // count: countReducer,
+     
+      words: wordsReducer,
+      shouldShowForm: shouldShowFormReducer,
+      filterMode: filterModeReducer
     
     
     })
