@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Word } from './word';
 import { AppState } from './types';
 import {Http} from '@angular/http'
+const URL ='api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml';
 @Component({
     selector: 'app-list-words',
     template: `
@@ -20,7 +21,10 @@ export class ListWordsComponent {
     constructor(private store: Store<AppState>, private http: Http) {
         this.store.select('words').subscribe(w => this.words = w);
         this.store.select('filterMode').subscribe(f => this.filterMode = f);
-        this.http.get('')
+        this.http.get(URL)
+        .toPromise()
+        .then(res => res.json()) //mac dinh tra ve raw
+        .then(resJson =>console.log(resJson.main.temp));
     }
 
     get filteredWords() {
